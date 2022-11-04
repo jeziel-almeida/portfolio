@@ -7,12 +7,21 @@
     gap: 3rem
 
     h1
+        --bg-size: 400%
+        --color-one: rgb(250, 82, 82)
+        --color-two: rgb(221, 36, 118)
         width: 100%
         font-size: 4rem
         margin-bottom: 4rem
-        background: variables.$gradient
+        background: linear-gradient(90deg, var(--color-one), var(--color-two), var(--color-one)) 0 0 / var(--bg-size) 100%
+        animation: move-bg 4s infinite linear
+        color: transparent
         -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
+
+    @keyframes move-bg
+        to
+            background-position: var(--bg-size) 0
+        
 
 @media (max-width: 480px)
     #portfolio
